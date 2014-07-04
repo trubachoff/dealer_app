@@ -1,0 +1,21 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @employee.name
+p
+  strong Lastname:
+  = @employee.lastname
+p
+  strong Email:
+  = @employee.email
+p
+  strong Fired:
+  = @employee.fired
+p
+  strong Encrypted password:
+  = @employee.encrypted_password
+
+= link_to 'Edit', edit_employee_path(@employee)
+'|
+= link_to 'Back', employees_path

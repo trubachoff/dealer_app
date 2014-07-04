@@ -1,4 +1,16 @@
 DealerApp::Application.routes.draw do
+  root to: "home#index"
+
+  resources :brands
+
+  resources :cars
+
+  resources :customers
+
+  resources :employees
+
+  resources :dealers
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Model:
+  = @car.model
+p
+  strong Vin:
+  = @car.vin
+
+= link_to 'Edit', edit_car_path(@car)
+'|
+= link_to 'Back', cars_path

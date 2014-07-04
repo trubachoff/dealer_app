@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'rails', '3.2.0'
+gem 'rails', '3.2.19'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
@@ -17,7 +17,7 @@ end
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
+  #gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
 
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
@@ -43,14 +43,15 @@ gem 'jquery-rails'
 # To use debugger
 # gem 'ruby-debug19', :require => 'ruby-debug'
 
-# Bootstrap
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'autoprefixer-rails'
-gem 'sprockets-rails', :require => 'sprockets/railtie'
-
 # Slim
 gem 'slim', '~>2.0.2'
 gem 'slim-rails', '~>2.1.5'
 
 # Nested form
 gem "nested_form"
+
+gem 'sprockets', '2.2.2.backport2'
+gem 'sprockets-rails', '2.0.0.backport1'
+gem 'sass-rails', github: 'guilleiguaran/sass-rails', branch: 'backport'
+
+gem 'bootstrap-sass', '~> 3.2.0'

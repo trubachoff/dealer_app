@@ -1,0 +1,18 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @dealer.title
+p
+  strong Address:
+  = @dealer.address
+p
+  strong Phone:
+  = @dealer.phone
+p
+  strong Site:
+  = @dealer.site
+
+= link_to 'Edit', edit_dealer_path(@dealer)
+'|
+= link_to 'Back', dealers_path
