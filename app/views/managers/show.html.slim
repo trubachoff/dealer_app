@@ -1,0 +1,15 @@
+p#notice = notice
+
+p
+  strong Name:
+  = @manager.name
+p
+  strong Lastname:
+  = @manager.lastname
+p
+  strong Email:
+  = @manager.email
+
+=' link_to 'Edit', edit_manager_path(@manager)
+'|
+= link_to 'Back', managers_path
