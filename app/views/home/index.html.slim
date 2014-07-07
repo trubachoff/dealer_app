@@ -2,19 +2,53 @@ div class="jumbotron"
   div class="container"
     div class="page-header"
       h1 
-        |Welcome to 
+        | Welcome to 
         strong Dealer
-        |!
+        | !
 
     p
-      strong Title:
+      strong Title: 
       = @dealer.title
     p
-      strong Address:
+      strong Address: 
       = @dealer.address
     p
-      strong Phone:
+      strong Phone: 
       = @dealer.phone
     p
-      strong Site:
+      strong Site: 
       = @dealer.site
+    p
+      a id="add-customer" class="btn btn-default center-block" href="/customers/new"
+        | Add customer
+
+div class="container"
+  div class="row"
+    div class="col-md-12"
+      h2 Our advantages
+    div class="col-md-4"
+      h3 Dignity 1
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p 
+        a class="btn btn-default" href="#" role="button"
+          | View details &raquo;
+    div class="col-md-4"
+      h3 Dignity 2
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p
+        a class="btn btn-default" href="#" role="button"
+          | View details &raquo;
+
+    div class="col-md-4"
+      h3 Dignity 3
+      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+        | tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+        | quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+      p
+        a class="btn btn-default" href="#" role="button"
+          | View details &raquo;
+

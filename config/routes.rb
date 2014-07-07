@@ -1,4 +1,5 @@
 DealerApp::Application.routes.draw do
+  
   root to: "home#index"
 
   resources :brands
@@ -7,7 +8,7 @@ DealerApp::Application.routes.draw do
 
   resources :customers
 
-  resources :employees
+  resources :managers
 
   resources :dealers
 

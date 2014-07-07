@@ -1,5 +1,5 @@
 class HomeController < ApplicationController
   def index
-    @dealer = Dealer.first
+    @dealer = Dealer.find(1)
   end
 end

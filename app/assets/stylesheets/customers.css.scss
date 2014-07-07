@@ -1,3 +1,24 @@
 // Place all the styles related to the customers controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.form-group label {
+  width: 80px;
+}
+#code-prefix {
+  width: 30px;
+  text-align: center;
+}
+#customer_phone_code {
+  width: 40px;
+  text-align: center;
+}
+#customer_phone {
+  width: 180px;
+}
+.field_with_errors label {
+  color: darkred !important;
+  display: inline;
+  width: 80px;
+  float: left;
+}
