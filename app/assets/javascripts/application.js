@@ -17,3 +17,6 @@
 //= require bootstrap-sprockets
 //= require jquery_nested_form
 
+$(document).ready(function () {
+  $('#manager-table td:contains("true")').parent().addClass('fired');
+});
