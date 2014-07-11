@@ -18,6 +18,6 @@
 //= require jquery_nested_form
 
 $(document).ready(function () {
-  $('#manager-table td:contains("true")').parent().addClass('fired');
+  $('.manager-table td:contains("true")').parent().addClass('fired');
 
 });
