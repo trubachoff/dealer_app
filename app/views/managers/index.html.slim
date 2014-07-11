@@ -1,28 +1,20 @@
 h1 Listing managers
 
-table#manager-table.table.table-hover
-  thead
-    tr
-      th №
-      th Name
-      th Lastname
-      th Email
-      th Fired
-      th
-      th
-      th
+ul.nav.nav-tabs role="tablist"
+  li.active
+    a href="#all" role="tab" data-toggle="tab" All
+  li
+    a href="#not_fired" role="tab" data-toggle="tab" Not fired
+  li
+    a href="#fired" role="tab" data-toggle="tab" Fired
 
-  tbody
-    - @managers.each_with_index do |manager, i|
-      tr
-        td = (i+1)
-        td = manager.name
-        td = manager.lastname
-        td = manager.email
-        td = manager.fired
-        td = link_to 'Show', manager
-        td = link_to 'Edit', edit_manager_path(manager)
-        td = link_to 'Destroy', manager, data: {:confirm => 'Are you sure?'}, :method => :delete
+.tab-content
+  #all.tab-pane.active
+    = render partial: 'table', locals: {managers: @managers}
+  #not_fired.tab-pane
+    = render partial: 'table', locals: {managers: @managers.select{ |m| not m.fired}}
+  #fired.tab-pane
+    = render partial: 'table', locals: {managers: @managers.select{ |m| m.fired}}
 
 br
 
