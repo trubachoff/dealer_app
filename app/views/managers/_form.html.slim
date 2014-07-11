@@ -1,24 +1,29 @@
-= form_for @manager do |f|
-  - if @manager.errors.any?
-    #error_explanation
-      h2 = "#{pluralize(@manager.errors.count, "error")} prohibited this manager from being saved:"
-      ul
-        - @manager.errors.full_messages.each do |message|
-          li = message
-
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :lastname
-    = f.text_field :lastname
-  .field
-    = f.label :email
-    = f.text_field :email
-  .field
-    = f.label :fired
-    = f.number_field :fired
-  .field
-    = f.label :encrypted_password
-    = f.text_field :encrypted_password
-  .actions = f.submit 'Save'
+= form_for @manager, html: {role: "form", class: "left"} do |f|
+  .row
+    .col-md-12
+      - if @manager.errors.any?
+        #error_explanation
+          ul
+            - @manager.errors.full_messages.each do |message|
+              li.text-danger = message
+    .col-md-4
+      .form-group
+        = f.label :name, class: "control-label"
+        = f.text_field :name, class: "form-control"
+      .form-group
+        = f.label :lastname, class: "control-label"
+        = f.text_field :lastname, class: "form-control"
+      .form-group
+        = f.label :email, class: "control-label"
+        = f.text_field :email, class: "form-control"
+      .checkbox
+        label
+          = f.check_box :fired
+          | Fired
+      .form-group
+        = f.label :encrypted_password, class: "control-label"
+        = f.text_field :encrypted_password, class: "form-control"
+        
+  .row
+    .col-md-12
+      .actions = f.submit 'Save', class: "btn btn-primary"

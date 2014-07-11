@@ -2,23 +2,20 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.form-group label {
+/*.form_group label {
   width: 80px;
-}
-#code-prefix {
-  width: 30px;
+}*/
+#customer_phone_prefix {
+  width: 50px;
   text-align: center;
 }
 #customer_phone_code {
-  width: 40px;
+  width: 60px;
   text-align: center;
 }
 #customer_phone {
-  width: 180px;
+  width: 230px;
 }
-.field_with_errors label {
-  color: darkred !important;
-  display: inline;
-  width: 80px;
-  float: left;
+#customer_comment {
+  max-width: 358px;
 }

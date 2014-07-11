@@ -4,4 +4,8 @@ class Dealer < ActiveRecord::Base
   has_many :managers
   has_many :customers, through: :managers
 
+  def self.current
+    Dealer.find(1)
+  end
+  
 end

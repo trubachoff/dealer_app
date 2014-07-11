@@ -1,5 +1,6 @@
-p#notice = notice
-
+- if not notice.nil?
+  p.bg-info = notice
+  
 p
   strong Name:
   = @customer.name
@@ -16,9 +17,12 @@ p
   strong Phone code:
   = @customer.phone_code
 p
-  strong Visited:
-  = @customer.visited
+  strong Comment:
+  = @customer.comment
+p
+  strong Manager_id:
+  = @customer.manager_id
 
-= link_to 'Edit', edit_customer_path(@customer)
+=' link_to 'Edit', edit_customer_path(@customer)
 '|
 = link_to 'Back', customers_path

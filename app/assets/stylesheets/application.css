@@ -10,6 +10,7 @@
  *
  *= require_self
  *= require_tree .
+ *= require font-awesome
 */
 @import "bootstrap-sprockets";
 @import "bootstrap";
@@ -17,6 +18,7 @@
 /* fixed bottom footer */
 html,
 body { height: 100% }
+
 #wrapper {
   min-height: 100%;
   padding-bottom: -60px;
@@ -24,7 +26,7 @@ body { height: 100% }
 #wrapper:after{
   content: ' ';
   display: block;
-  height: 80px; /* 60px(footer) + 20px(margin-top) */
+  height: 80px; /* = 60px(h.footer) + 20px(margin-top) */
   clear: both
 }
 #footer {
@@ -42,12 +44,28 @@ body { height: 100% }
   border-color: #444;
 }
 #wrapper > .content {
-    padding: 50px 15px 0px;
+    padding: 50px 15px 0;
 }
-
 .text-muted {
     color: #777;
 }
 .navbar-default {
   background-color: rgba(248, 248, 248, 0.97);
+}
+.bg-info,
+.bg-danger {
+  padding: 15px;
+  margin: 10px 0;
+}
+
+/* Errors */
+.field_with_errors label {
+  color: rgb(233, 102, 102) !important;
+}
+.field_with_errors input {
+  border-color: rgb(233, 102, 102) !important;
+  outline: 0px none;
+}
+.field_with_errors input:focus {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.075) inset, 0px 0px 8px rgba(233, 102, 102, 0.6) !important;
 }

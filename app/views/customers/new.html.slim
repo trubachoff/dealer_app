@@ -1,43 +1,5 @@
 h2 New customer
 
-= form_for @customer do |f|
-  .row
-    .col-md-12
-      - if @customer.errors.any?
-        #error_explanation
-          ul
-            - @customer.errors.full_messages.each do |message|
-              li class="text-danger" = message
-    .col-md-6
-        .form-group
-          = f.label :name
-          = f.text_field :name
-        .form-group
-          = f.label :lastname
-          = f.text_field :lastname
-        .form-group
-          = f.label :email
-          = f.text_field :email, type: "email"
-        .form-group
-          = f.label :phone
-          input id="code-prefix" type="text"  value="+7"
-          |(
-          = f.text_field :phone_code
-          |)
-          = f.text_field :phone, type: "tel"
-          
-    .col-md-6
-        .form-group
-          label Comment
-          = text_area_tag :comment, "", size: "30x4", placeholder: "Please input comment"
-        .form-group
-          label Manager
-          = select :emploee_id, :name, []
-            option value="1"
-              | Manager 1
-            option value="2"
-              | Manager 2
+==render 'form'
 
-  .actions.text-center
-    =' f.submit 'Save'
-    = link_to 'Back', customers_path
+= link_to 'Back', customers_path

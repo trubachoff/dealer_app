@@ -1,5 +1,6 @@
-p#notice = notice
-
+- if not notice.nil?
+  p.bg-info = notice
+  
 p
   strong Title:
   = @dealer.title

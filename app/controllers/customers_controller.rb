@@ -2,7 +2,7 @@ class CustomersController < ApplicationController
   # GET /customers
   # GET /customers.json
   def index
-    @customers = Customer.all
+    @customers = Dealer.current.customers
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class CustomersController < ApplicationController
   # POST /customers
   # POST /customers.json
   def create
-    @customer = Customer.new(params[:customer])
+    @customer = Dealer.current.customers.new(params[:customer])
 
     respond_to do |format|
       if @customer.save

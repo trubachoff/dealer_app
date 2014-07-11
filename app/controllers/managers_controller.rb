@@ -2,7 +2,7 @@ class ManagersController < ApplicationController
   # GET /managers
   # GET /managers.json
   def index
-    @managers = Manager.all
+    @managers = Dealer.current.managers.all
 
     respond_to do |format|
       format.html # index.html.erb
@@ -40,7 +40,7 @@ class ManagersController < ApplicationController
   # POST /managers
   # POST /managers.json
   def create
-    @manager = Manager.new(params[:manager])
+    @manager = Dealer.current.managers.new(params[:manager])
 
     respond_to do |format|
       if @manager.save

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140707125349) do
+ActiveRecord::Schema.define(:version => 20140710120630) do
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -39,13 +39,14 @@ ActiveRecord::Schema.define(:version => 20140707125349) do
     t.string   "email"
     t.string   "phone"
     t.string   "phone_code"
-    t.date     "visited"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
-    t.integer  "employee_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+    t.integer  "manager_id"
+    t.string   "phone_prefix"
+    t.string   "comment"
   end
 
-  add_index "customers", ["employee_id"], :name => "index_customers_on_employee_id"
+  add_index "customers", ["manager_id"], :name => "index_customers_on_employee_id"
 
   create_table "dealers", :force => true do |t|
     t.string   "title"
@@ -60,10 +61,10 @@ ActiveRecord::Schema.define(:version => 20140707125349) do
     t.string   "name"
     t.string   "lastname"
     t.string   "email"
-    t.integer  "fired"
+    t.boolean  "fired",              :default => false
     t.string   "encrypted_password"
-    t.datetime "created_at",         :null => false
-    t.datetime "updated_at",         :null => false
+    t.datetime "created_at",                            :null => false
+    t.datetime "updated_at",                            :null => false
     t.integer  "dealer_id"
   end
 

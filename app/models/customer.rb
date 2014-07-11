@@ -1,8 +1,13 @@
 class Customer < ActiveRecord::Base
-  attr_accessible :email, :lastname, :name, :phone, :phone_code, :visited
+  attr_accessible :email, :name, :lastname, 
+      :phone_prefix, :phone_code, :phone, :comment, :manager_id, :cars_attributes
+
   has_many :cars
   belongs_to :manager
 
-  validates :email, presence: true 
-  
+  accepts_nested_attributes_for :cars
+
+  validates :email, presence: true
+  validates :manager_id, presence: true
+
 end

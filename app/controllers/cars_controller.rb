@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   # GET /cars
   # GET /cars.json
   def index
-    @cars = Car.all
+    @cars = Dealer.current.cars
 
     respond_to do |format|
       format.html # index.html.erb
@@ -13,7 +13,7 @@ class CarsController < ApplicationController
   # GET /cars/1
   # GET /cars/1.json
   def show
-    @car = Car.find(params[:id])
+    @car = Dealer.current.cars.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -25,6 +25,7 @@ class CarsController < ApplicationController
   # GET /cars/new.json
   def new
     @car = Car.new
+    @brands = Brand.all
 
     respond_to do |format|
       format.html # new.html.erb
@@ -35,12 +36,13 @@ class CarsController < ApplicationController
   # GET /cars/1/edit
   def edit
     @car = Car.find(params[:id])
+    @brands = Brand.all
   end
 
   # POST /cars
   # POST /cars.json
   def create
-    @car = Car.new(params[:car])
+    @car = Dealer.current.cars.new(params[:car])
 
     respond_to do |format|
       if @car.save
