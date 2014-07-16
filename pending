@@ -1,0 +1,2 @@
+      invoke  active_record
+      create    db/migrate/20140714081409_create_statuses.rb

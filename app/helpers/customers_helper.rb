@@ -12,4 +12,8 @@ module CustomersHelper
     Dealer.current.cars.where(customer_id: [nil, @customer.id]).map { |car| [car.model, car.id] }
   end
 
+  def status_for_select
+    Status.all.map { |s| [s.name, s.id] }
+  end
+
 end

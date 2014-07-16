@@ -1,0 +1,9 @@
+<h1>Show Manager</h1>
+
+<a data-type="edit">Edit</a> <a data-type="back">Back</a>
+
+<p>Name: <%= @name %></p>
+<p>Lastname: <%= @lastname %></p>
+<p>Email: <%= @email %></p>
+<p>Encrypted Password: <%= @encrypted_password %></p>
+<p>Fired: <%= @fired %></p>

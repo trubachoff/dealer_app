@@ -11,7 +11,11 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20140710120630) do
+ActiveRecord::Schema.define(:version => 20140714085759) do
+
+  create_table "Statuses", :force => true do |t|
+    t.string "name"
+  end
 
   create_table "brands", :force => true do |t|
     t.string   "name"
@@ -39,11 +43,12 @@ ActiveRecord::Schema.define(:version => 20140710120630) do
     t.string   "email"
     t.string   "phone"
     t.string   "phone_code"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.datetime "created_at",                  :null => false
+    t.datetime "updated_at",                  :null => false
     t.integer  "manager_id"
     t.string   "phone_prefix"
     t.string   "comment"
+    t.integer  "status_id",    :default => 1
   end
 
   add_index "customers", ["manager_id"], :name => "index_customers_on_employee_id"

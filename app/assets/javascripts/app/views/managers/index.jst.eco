@@ -1,0 +1,12 @@
+<h1>Listing Managers</h1>
+
+<% for manager in @managers: %>
+  <div class="item" data-id="<%= manager.id %>">
+    <a data-type="show"><%= manager.name %></a>
+    
+    <a data-type="edit">Edit</a> 
+    <a data-type="destroy">Destroy</a>
+  </div>
+<% end %>
+
+<p><a data-type="new">New Manager</a></p>
